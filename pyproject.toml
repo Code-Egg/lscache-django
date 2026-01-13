@@ -9,7 +9,7 @@ description = "LiteSpeed Cache integration for Django"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
-  {name = "Your Name", email = "you@example.com"}
+  {name = "Egg", email = "localhost@gmail.com"}
 ]
 requires-python = ">=3.8"
 
