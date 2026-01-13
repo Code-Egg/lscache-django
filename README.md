@@ -4,7 +4,7 @@ This is a sample LiteSpeed Cache plugin for Django applications.
 
 ## Installation
 ```
-pip install --force-reinstall git+https://github.com/Code-Egg/django-lscache.git
+pip install django-lscache
 ```
 
 Add django_lscache module to settings.py
@@ -22,7 +22,7 @@ MIDDLEWARE = [
 ```
 
 ## Usage
-Use decorator in views:
+Examples of using decorator in views:
 ```
 from django_lscache.decorators import lscache
 from django.http import HttpResponse
