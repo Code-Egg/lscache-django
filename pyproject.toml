@@ -7,7 +7,7 @@ name = "django-lscache"
 version = "0.1.0"
 description = "LiteSpeed Cache integration for Django"
 readme = "README.md"
-license = {text = "MIT"}
+license = "MIT"
 authors = [
   {name = "Cold Egg"}
 ]
