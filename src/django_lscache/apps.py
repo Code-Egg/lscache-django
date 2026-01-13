@@ -6,5 +6,4 @@ class DjangoLSCacheConfig(AppConfig):
     verbose_name = "LiteSpeed Cache"
 
     def ready(self):
-        from .conf import ensure_middleware
-        ensure_middleware()
+        pass
