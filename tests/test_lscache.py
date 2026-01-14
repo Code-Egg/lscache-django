@@ -11,7 +11,7 @@ self.middleware = LSCacheMiddleware()
 
 
 def test_cache_header_set(self):
-@lscache(max_age=120, public=False)
+@lscache(max_age=120)
 def view(request):
 return HttpResponse('Hello World')
 
@@ -19,4 +19,4 @@ return HttpResponse('Hello World')
 request = self.factory.get('/')
 response = view(request)
 response = self.middleware.process_response(request, response)
-self.assertEqual(response['X-LiteSpeed-Cache-Control'], 'max-age=120;private')
+self.assertEqual(response['X-LiteSpeed-Cache-Control'], 'max-age=120;public')

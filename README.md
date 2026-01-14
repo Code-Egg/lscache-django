@@ -2,12 +2,16 @@
 
 A simple **LiteSpeed Cache** integration for Django applications.
 
+## Prerequisite
+
+Running the app on LiteSpeed/OpenLiteSpeed Web Server, and setup the cache folder. 
+
 ## Installation
 ```
 pip install django-lscache
 ```
 
-Add `django_lscache` to your `INSTALLED_APPS` in settings.py:
+Add `django_lscache` to your `INSTALLED_APPS` in **settings.py**:
 ```
 INSTALLED_APPS = [
     ...
@@ -32,7 +36,7 @@ from django.http import HttpResponse
 def index(request):
     return HttpResponse("Hello, world!")
 
-@lscache(max_age=300)
+@lscache(max_age=30)
 def index(request):
     return HttpResponse("Hello, world!")   
 
