@@ -1,7 +1,7 @@
 from django.test import RequestFactory, TestCase
 from django.http import HttpResponse
-from django_lscache.decorators import lscache
-from django_lscache.middleware import LSCacheMiddleware
+from lscache_django.decorators import lscache
+from lscache_django.middleware import LSCacheMiddleware
 
 class LSCacheMiddlewareTest(TestCase):
 

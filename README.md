@@ -1,4 +1,4 @@
-# django-lscache
+# lscache-django
 
 A simple **LiteSpeed Cache** integration for Django applications.
 
@@ -9,21 +9,21 @@ A simple **LiteSpeed Cache** integration for Django applications.
 
 ## Installation
 ```
-pip install django-lscache
+pip install lscache-django
 ```
 
-Add `django_lscache` to your `INSTALLED_APPS` in **settings.py**:
+Add `lscache_django` to your `INSTALLED_APPS` in **settings.py**:
 ```
 INSTALLED_APPS = [
     ...
-    'django_lscache',
+    'lscache_django',
 ]
 ```
 Add the middleware:
 ```
 MIDDLEWARE = [
     ...
-    'django_lscache.middleware.LSCacheMiddleware',
+    'lscache_django.middleware.LSCacheMiddleware',
 ]
 ```
 
@@ -31,7 +31,7 @@ MIDDLEWARE = [
 Use the `@lscache` decorator in your views to cache responses. You can control cache duration, cache type, and tags.
 
 ```
-from django_lscache.decorators import lscache
+from lscache_django.decorators import lscache
 from django.http import HttpResponse
 ```
 
@@ -95,7 +95,7 @@ Cache purging is done by sending an X-LiteSpeed-Purge response header.
 
 Add the helper and the following examples in your app views:
 ```
-from django_lscache import lscache_purge
+from lscache_django import lscache_purge
 from django.http import HttpResponse
 ```
 
