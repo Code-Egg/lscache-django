@@ -3,8 +3,8 @@ requires = ["setuptools>=68,<77", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "django-lscache"
-version = "0.2.1"
+name = "lscache-django"
+version = "0.2.2"
 description = "LiteSpeed Cache integration for Django"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -25,9 +25,9 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Code-Egg/django-lscache"
-Documentation = "https://github.com/Code-Egg/django-lscache/blob/main/README.md"
-Issues = "https://github.com/Code-Egg/django-lscache/issues"
+Homepage = "https://github.com/Code-Egg/lscache-django"
+Documentation = "https://github.com/Code-Egg/lscache-django/blob/main/README.md"
+Issues = "https://github.com/Code-Egg/lscache-django/issues"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
