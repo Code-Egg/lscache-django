@@ -35,6 +35,8 @@ from django_lscache.decorators import lscache
 from django.http import HttpResponse
 ```
 
+### cache-control
+
 **Admin page (no cache)**
 
 Admin pages should never be cached.
