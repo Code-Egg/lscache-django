@@ -42,4 +42,4 @@ jobs:
           sudo touch app/tests/__init__.py
           sudo curl -o app/tests/test_lscache.py https://raw.githubusercontent.com/litespeedtech/lscache-django/main/tests/test_lscache.py
           echo 'Test'
-          sudo `which python` manage.py test app
+          sudo `which python` manage.py test app.tests.test_lscache
