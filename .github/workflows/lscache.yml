@@ -20,16 +20,18 @@ jobs:
       - name: Setup Django environment
         shell: bash
         run: |
-          sudo bash <(curl -sk https://raw.githubusercontent.com/litespeedtech/ls-cloud-image/master/Setup/djangosetup.sh)
-          sudo bash <(curl -sk https://raw.githubusercontent.com/litespeedtech/ls-cloud-image/master/Cloud-init/per-instance.sh)
-          sudo source /usr/local/lsws/Example/html/bin/activate
+          curl -sk -o djangosetup.sh https://raw.githubusercontent.com/litespeedtech/ls-cloud-image/master/Setup/djangosetup.sh
+          sudo bash djangosetup.sh
+          curl -sk -o per-instance.sh https://raw.githubusercontent.com/litespeedtech/ls-cloud-image/master/Cloud-init/per-instance.sh
+          sudo bash per-instance.sh
+          source /usr/local/lsws/Example/html/bin/activate
           cd /usr/local/lsws/Example/html/demo
-          sudo git clone https://github.com/litespeedtech/lscache-django.git
-          sudo pip install -e lscache-django
+          git clone https://github.com/litespeedtech/lscache-django.git
+          pip install -e lscache-django
           SETTINGS="demo/settings.py"
           grep -q "lscache_django" $SETTINGS || sed -i "/INSTALLED_APPS = \[/a\    'lscache_django'," $SETTINGS
           grep -q "lscache_django.middleware.LSCacheMiddleware" $SETTINGS || sed -i "/MIDDLEWARE = \[/a\    'lscache_django.middleware.LSCacheMiddleware'," $SETTINGS
-          sudo mkdir -p app/tests
+          mkdir -p app/tests
           touch app/tests/__init__.py
-          sudo curl -o app/tests/test_lscache.py https://raw.githubusercontent.com/litespeedtech/lscache-django/main/tests/test_lscache.py
-          sudo python manage.py test app
+          curl -o app/tests/test_lscache.py https://raw.githubusercontent.com/litespeedtech/lscache-django/main/tests/test_lscache.py
+          python manage.py test app
