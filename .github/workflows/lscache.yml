@@ -34,8 +34,8 @@ jobs:
           echo 'Install lscache-django'
           sudo pip install -e lscache-django
           SETTINGS="demo/settings.py"
-          sudo grep -q "lscache_django" $SETTINGS || sed -i "/INSTALLED_APPS = \[/a\    'lscache_django'," $SETTINGS
-          sudo grep -q "lscache_django.middleware.LSCacheMiddleware" $SETTINGS || sed -i "/MIDDLEWARE = \[/a\    'lscache_django.middleware.LSCacheMiddleware'," $SETTINGS
+          sudo grep -q "lscache_django" $SETTINGS || sudo sed -i "/INSTALLED_APPS = \[/a\    'lscache_django'," $SETTINGS
+          sudo grep -q "lscache_django.middleware.LSCacheMiddleware" $SETTINGS || sudo sed -i "/MIDDLEWARE = \[/a\    'lscache_django.middleware.LSCacheMiddleware'," $SETTINGS
           echo 'Setup test'
           sudo mkdir -p app/tests
           sudo touch app/tests/__init__.py
