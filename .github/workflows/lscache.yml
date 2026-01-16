@@ -28,6 +28,7 @@ jobs:
           echo 'Active virtual env'
           source /usr/local/lsws/Example/html/bin/activate
           cd /usr/local/lsws/Example/html/demo
+          which python
           echo 'Download lscach-django'
           sudo git clone https://github.com/litespeedtech/lscache-django.git
           echo 'Install lscache-django'
